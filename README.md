@@ -2,4 +2,4 @@
 
 ## Overview
 
-![diagram](https://github.com/LakhderAmine99/ComputerVisionApp/blob/main/diagram.png)
+![diagram](https://i.imgur.com/JbyFsBO.png)
