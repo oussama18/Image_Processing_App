@@ -1,4 +1,4 @@
-from src.modules.ImageProcessing import ImageProcessing
+from modules.ImageProcessing import ImageProcessing
 
 class PicProcessingApp(object):
     def __init__(self,image):

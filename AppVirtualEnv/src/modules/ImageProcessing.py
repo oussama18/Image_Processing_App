@@ -8,7 +8,7 @@ from matplotlib import markers
 import numpy as np
 
 from skimage import segmentation, color
-from skimage.future import graph
+from skimage import graph
 from skimage.morphology import flood
 from skimage.filters import prewitt
 

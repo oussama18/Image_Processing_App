@@ -8,14 +8,14 @@ from cv2 import sqrt
 import numpy as np
 import matplotlib.pyplot as plt
 
-from src.modules.PicProcessingApp import PicProcessingApp
+from modules.PicProcessingApp import PicProcessingApp
 from PySide6.QtCore import (Qt, QRect)
 from PySide6.QtGui import (QImage, QPixmap)
 from PySide6.QtWidgets import (QApplication, QFrame, QLabel,
                                QMainWindow, QVBoxLayout, QFileDialog, 
                                QSlider, QHBoxLayout)
 
-from src.ui.DEV_UI_MainWindow import Ui_MainWindow
+from ui.DEV_UI_MainWindow import Ui_MainWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -42,8 +42,8 @@ class MainWindow(QMainWindow):
         self.pixmap = self.ui.Image.pixmap()
         self.pixmapcopy = self.ui.Image_copy.pixmap()
         
-        self.image = cv2.imread("C:\\Users\\amine\\OneDrive\\Desktop\\Programming\\Python\\workspace\\computer vision\\ComputerVisionApp\\AppVirtualEnv\\src\\assets\\as11.png")
-        self.persistingImage = cv2.imread("C:\\Users\\amine\\OneDrive\\Desktop\\Programming\\Python\\workspace\\computer vision\\ComputerVisionApp\\AppVirtualEnv\\src\\assets\\as11.png")
+        self.image = cv2.imread(".\\AppVirtualEnv\\src\\assets\\as11.png")
+        self.persistingImage = cv2.imread(".\\AppVirtualEnv\\src\\assets\\as11.png")
         self.setPicture(self.image,pixmap=self.pixmapcopy)
         
         if self._isFiltersMenuOpen == False:
@@ -163,7 +163,7 @@ class MainWindow(QMainWindow):
             self.ui.Image_copy.setPixmap(QPixmap(sclaedPixMap))
             
     def loadImageFile(self):
-        self.filename = QFileDialog.getOpenFileName(self,"Open File","C:\\Users\\amine\\OneDrive\\Desktop\\Programming\\Python\\workspace\\computer vision\\ComputerVisionApp\\AppVirtualEnv\\src\\assets","All Files (*)")
+        self.filename = QFileDialog.getOpenFileName(self,"Open File",".\\AppVirtualEnv\\src\\assets","All Files (*)")
         
         if(self.filename[0]):
             self.image = cv2.imread(self.filename[0])
@@ -179,7 +179,7 @@ class MainWindow(QMainWindow):
             self.setPicture(self.image,pixmap=self.pixmapcopy)
         
     def saveImageFile(self):
-        fileName = QFileDialog.getSaveFileName(self,"Save File","C:\\Users\\amine\\OneDrive\\Desktop\\Programming\\Python\\workspace\\computer vision\\ComputerVisionApp\\AppVirtualEnv\\src\\assets","All Files (*)")
+        fileName = QFileDialog.getSaveFileName(self,"Save File",".\\AppVirtualEnv\\src\\assets","All Files (*)")
         
         image = self.ui.Image_copy.pixmap().toImage()
         image = image.convertToFormat(QImage.Format_RGB888)
